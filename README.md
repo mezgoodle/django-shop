@@ -3,4 +3,4 @@
 
 ## Credits
 
-- [Video](https://www.youtube.com/watch?v=_ELCMngbM0E)
+- [Playlist on YouTube](https://www.youtube.com/watch?v=QSyrThcaghg&list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng)
