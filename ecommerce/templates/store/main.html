@@ -9,8 +9,7 @@
     <title>{% block title %}Welcome to shop!{% endblock %}</title>
 </head>
 <body>
-    <h1>Navbar</h1>
-    <hr>
+    {% include 'store/includes/navbar.html' %}
     <div class="container">
         {% block content %}
         {% endblock %}
