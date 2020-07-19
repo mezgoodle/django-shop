@@ -10,6 +10,11 @@ class Customer(models.Model):
     def __str__(self) -> str:
         return self.name
 
+    class Meta:
+        verbose_name = 'Customer'
+        verbose_name_plural = 'Customers'
+
+
 class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.FloatField()
@@ -18,6 +23,12 @@ class Product(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+    class Meta:
+        ordering = ['-price']
+        verbose_name = 'Product'
+        verbose_name_plural = 'Products'
+
 
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, blank=True, null=True)
@@ -28,6 +39,12 @@ class Order(models.Model):
     def __str__(self) -> str:
         return str(self.id)
 
+    class Meta:
+        ordering = ['date_orderd']
+        verbose_name = 'Order'
+        verbose_name_plural = 'Orders'
+
+
 class OrderItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, blank=True, null=True)
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, blank=True, null=True)
@@ -36,6 +53,12 @@ class OrderItem(models.Model):
 
     def __str__(self) -> str:
         return str(self.product)
+
+    class Meta:
+        ordering = ['date_added']
+        verbose_name = 'Order item'
+        verbose_name_plural = 'Order items'
+
 
 class ShippingAddress(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, blank=True, null=True)
@@ -48,3 +71,9 @@ class ShippingAddress(models.Model):
 
     def __str__(self) -> str:
         return self.address
+    
+    class Meta:
+        ordering = ['date_added']
+        verbose_name = 'Adress'
+        verbose_name_plural = 'Adresses'
+
