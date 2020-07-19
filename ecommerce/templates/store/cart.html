@@ -8,8 +8,8 @@
                 <br><br>
                 <table class="table">
                     <tr>
-                        <th><h5>Items: <strong>3</strong></h5></th>
-                        <th><h5>Total: <strong>$43</strong></h5></th>
+                        <th><h5>Items: <strong>{{order.get_cart_items}}</strong></h5></th>
+                        <th><h5>Total: <strong>${{order.get_cart_total}}</strong></h5></th>
                         <th>
                             <a style="float: right; margin: 5px;" class="btn btn-success" href="{% url 'store:checkout' %}">Checkout</a>
                         </th>
@@ -37,7 +37,7 @@
 				            <img class="chg-quantity" src="{% static  'store/img/arrow-down.png' %}">
                         </div>
                     </div>
-                    <div style="flex: 1;">$40</div>
+                    <div style="flex: 1;">${{item.get_total}}</div>
                 </div>
                 {% endfor %}
             </div>
