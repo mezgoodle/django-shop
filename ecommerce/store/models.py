@@ -24,8 +24,14 @@ class Product(models.Model):
     def __str__(self) -> str:
         return self.name
 
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except expression as identifier:
+            pass
+
     class Meta:
-        ordering = ['-price']
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
 
