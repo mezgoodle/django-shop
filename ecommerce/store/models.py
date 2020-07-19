@@ -28,8 +28,9 @@ class Product(models.Model):
     def imageURL(self):
         try:
             url = self.image.url
-        except expression as identifier:
-            pass
+        except:
+            url = 'img/placeholder.png'
+        return url
 
     class Meta:
         verbose_name = 'Product'
