@@ -2,14 +2,36 @@ let updateBtns = document.getElementsByClassName('update-cart')
 
 for (let i = 0; i < updateBtns.length; i++) {
   updateBtns[i].addEventListener('click', function(){
-    productId = this.dataset.product;
-    action = this.dataset.action;
+    const productId = this.dataset.product;
+    const action = this.dataset.action;
     console.log({productId, action});
     console.log({user});
     if (user === 'AnonymousUser') {
       console.log('Not logged in');
     } else {
-      console.log('User is logged in')
+      updateUserOrder(productId, action);
     }
   });
+}
+
+const updateUserOrder = (productId, action) => {
+  console.log('User is logged in');
+  const url = '/update_item/';
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-CSRFToken': csrftoken,
+    },
+    body: JSON.stringify({
+      productId,
+      action,
+    }),
+  })
+  .then((res) => {
+    return res.json()
+  })
+  .then((data) => {
+    console.log({data})
+  })
 }
