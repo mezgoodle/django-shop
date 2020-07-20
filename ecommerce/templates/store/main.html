@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'store/css/main.css' %}">
     <title>{% block title %}Welcome to shop!{% endblock %}</title>
+    <script text="text/javascript">
+      let user = '{{request.user}}'
+    </script>
 </head>
 <body>
     {% include 'store/includes/navbar.html' %}
