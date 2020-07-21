@@ -7,11 +7,11 @@
                 <form id="form">
                     <div id="user-info">
                         <div class="form-field">
-							<input required class="form-control" type="text" name="name" placeholder="Name..">
-						</div>
-						<div class="form-field">
-							<input required class="form-control" type="email" name="email" placeholder="Email..">
-						</div>
+							              <input required class="form-control" type="text" name="name" placeholder="Name..">
+						            </div>
+                        <div class="form-field">
+                          <input required class="form-control" type="email" name="email" placeholder="Email..">
+                        </div>
                     </div>
                     <div id="shipping-info">
                         <hr>
@@ -67,5 +67,13 @@
   if (shipping == 'False') {
     document.getElementById('shipping-info').innerHTML = ''
   }
+
+  let form = document.getElementById('form');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    console.log('Form submitted')
+    document.getElementById('form-button').classList.add('hidden');
+    document.getElementById('payment-info').classList.remove('hidden');
+  });
 </script>
 {% endblock %}
