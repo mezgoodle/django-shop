@@ -22,14 +22,14 @@ class ProductModelTest(TestCase):
     def setUpTestData(cls):
         Product.objects.create(
             name='headphones',
-            price=12.231,
+            price=12.236,
             digital=False,
         )
 
     def test_content(self):
         product = Product.objects.get(id=1)
         self.assertEquals(product.name, 'headphones')
-        self.assertEquals(product.price, 12.231)
+        self.assertEquals(float(product.price), 12.24)
         self.assertEquals(product.digital, False)
 
 class OrderModelTest(TestCase):
