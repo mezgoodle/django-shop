@@ -9,20 +9,23 @@
                     <div class="col-sm">
                         <ul class="list-group">
                             <li class="list-group-item"><h1>{{product.name}}</h1></li>
-                            <li class="list-group-item"><h2>{{product.price}}</h2></li>
-                            <li class="list-group-item">
+                            <li class="list-group-item"><h2>{{product.price|floatformat:2}} $</h2></li>
+                            <li class="list-group-item"><h4>
                                 {% if product.description %}
                                     {{product.description}}
                                 {% else %}
                                     Description is empty
                                 {% endif %}
+                            </h4></li>
+                            <li class="list-group-item"><h4>Digital: {{product.digital}}</h4></li>
+                            <li class="list-group-item">
+                                <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                                <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-info add-btn update-cart">Share with Email</button>
                             </li>
-                            <li class="list-group-item">Porta ac consectetur ac</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
                         </ul>
                     </div>
                     <div class="col-sm">
-                        <img class="thumbnail" src="{{product.imageURL}}" alt="product image">
+                        <img class="img-thumbnail" src="{{product.imageURL}}" alt="product image">
                     </div>
                 </div>
             </div>
