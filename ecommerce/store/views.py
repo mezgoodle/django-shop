@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse, HttpResponse
 from .models import *
-from .utils import cartData, cookieCart, guestOrder
+from .utils import cartData, guestOrder
 import json
 import datetime
 
@@ -17,9 +17,9 @@ def store(request):
 
 
 def view(request, product_id):
-    return HttpResponse(product_id)
+    product = get_object_or_404(Product, id=product_id)
+    return HttpResponse(product.imageURL)
     # template_name = 'blog/post_share.html'
-    # post = get_object_or_404(Post, id=post_id, status=1)
     # sent = False
     # if request.method == 'POST':
     #     form = EmailPostForm(request.POST)
