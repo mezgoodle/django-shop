@@ -40,8 +40,8 @@ def share(request, product_id):
         if form.is_valid():
             cd = form.cleaned_data
             product_url = request.build_absolute_uri(product.get_absolute_url())
-            subject = f"{cd['name']} recommends you read {product.title}"
-            message = f"Read {product.title} at {product_url}\n\n {cd['name']}\'s comments: {cd['comments']}"
+            subject = f"{cd['name']} recommends you read {product.name}"
+            message = f"Read {product.name} at {product_url}\n\n {cd['name']}\'s comments: {cd['comments']}"
             send_mail(subject, message, cd['email'], [cd['to']])
             sent = True
     else:

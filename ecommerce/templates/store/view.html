@@ -20,8 +20,7 @@
                             <li class="list-group-item"><h4>Digital: {{product.digital}}</h4></li>
                             <li class="list-group-item">
                                 <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-                                <a class="btn btn-outline-info add-btn update-cart" href="{% url 'store:share' product.id %}" role="button">Share this post</a>
-                                <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-info add-btn update-cart">Share with Email</button>
+                                <a class="btn btn-outline-info add-btn update-cart" href="{% url 'store:share' product.id %}" role="button">Share with Email</a>
                             </li>
                         </ul>
                     </div>
