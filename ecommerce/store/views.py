@@ -17,8 +17,11 @@ def store(request):
 
 
 def view(request, product_id):
+    data = cartData(request)
+    cartItems = data['cartItems']
+
     product = get_object_or_404(Product, id=product_id)
-    context = {'product': product}
+    context = {'product': product, 'cartItems': cartItems}
     template_name = 'store/view.html'
     return render(request, template_name, context)
     # sent = False
