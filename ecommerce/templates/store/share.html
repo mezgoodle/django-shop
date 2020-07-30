@@ -1,0 +1,17 @@
+{% extends 'store/main.html' %}
+{% block title %}Share a post{% endblock %}
+{% block content %}
+    {% if sent %}
+        <h1>E-mail successfully sent</h1>
+        <p>"{{ product.name }}" was successfully sent to {{ form.cleaned_data.to }}.</p>
+    {% else %}
+    <div class="container">
+        <h1>Share "{{ product.name }}" by e-mail</h1>
+        <form method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Send e-mail</button>
+        </form>
+    </div>
+    {% endif %}
+{% endblock %}
