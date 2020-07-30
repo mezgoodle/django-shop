@@ -1,11 +1,25 @@
 {% extends 'store/main.html' %}
 {% load static %}
+{% block title %}{{product.name}}{% endblock %}
 {% block content %}
     <div class="row">
         <div class="col-lg-12">
-            <h1>{{product.name}}</h1>
-            <h2>{{product.price}}</h2>
-            <img class="thumbnail" src="{{product.imageURL}}" alt="product image">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <ul class="list-group">
+                            <li class="list-group-item"><h1>{{product.name}}</h1></li>
+                            <li class="list-group-item"><h2>{{product.price}}</h2></li>
+                            <li class="list-group-item">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod cupiditate quam, officia neque rem inventore quibusdam quo id blanditiis unde obcaecati libero, aliquid natus, quis soluta reprehenderit. Numquam laborum ducimus sapiente aut ullam, quia facilis sit cumque recusandae rerum nihil, sequi quisquam sint in esse illo, doloribus tempora laudantium assumenda!</li>
+                            <li class="list-group-item">Porta ac consectetur ac</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm">
+                        <img class="thumbnail" src="{{product.imageURL}}" alt="product image">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}
