@@ -33,6 +33,11 @@ class Product(models.Model):
             url = 'img/placeholder.png'
         return url
 
+    def get_absolute_url(self):
+        from django.urls import reverse
+
+        return reverse('store:view', kwargs={'product_id': str(self.id)})
+
     class Meta:
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
