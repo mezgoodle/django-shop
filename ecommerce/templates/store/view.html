@@ -10,7 +10,13 @@
                         <ul class="list-group">
                             <li class="list-group-item"><h1>{{product.name}}</h1></li>
                             <li class="list-group-item"><h2>{{product.price}}</h2></li>
-                            <li class="list-group-item">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod cupiditate quam, officia neque rem inventore quibusdam quo id blanditiis unde obcaecati libero, aliquid natus, quis soluta reprehenderit. Numquam laborum ducimus sapiente aut ullam, quia facilis sit cumque recusandae rerum nihil, sequi quisquam sint in esse illo, doloribus tempora laudantium assumenda!</li>
+                            <li class="list-group-item">
+                                {% if product.description %}
+                                    {{product.description}}
+                                {% else %}
+                                    Description is empty
+                                {% endif %}
+                            </li>
                             <li class="list-group-item">Porta ac consectetur ac</li>
                             <li class="list-group-item">Vestibulum at eros</li>
                         </ul>
