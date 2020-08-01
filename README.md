@@ -4,8 +4,6 @@
 
 Hello everyone! This is the repository of shop application on Django framework.
 
-> Not mine
-
 ## Table of contents
 
 - [Table of contents](#table-of-contents)
